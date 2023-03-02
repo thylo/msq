@@ -1,0 +1,8 @@
+<nav>
+    <a href="/">Aurelie Moreels</a>
+    <ul>
+        {% for item in links %}
+            <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
