@@ -1,0 +1,33 @@
+// ==========================================
+// colors
+// ==========================================
+
+:root {
+  --color-white: #ffffff;
+  --color-gray1: #f9f9f9;
+  --color-gray2: #d8d8d8;
+  --color-gray3: #000;
+
+  --color-green1: #192b2b;
+  --color-green2: #152221;
+
+  --color-sand1: #fef3e8;
+  --color-sand2: #ffc874;
+  --color-sand3: #f2b14f;
+  --color-sand4: #ffcc8d;
+  --color-sand5: #ffc074;
+
+  --color-brand: var(--color-sand2);
+
+  --color-background1: var(--color-sand1);
+  --color-background2: var(--color-gray1);
+  --color-background3: var(--color-sand1);
+  --color-background4: var(--color-green2);
+
+  --color-text: var(--color-gray1);
+
+  --color-titles1: var(--color-brand);
+  --color-titles2: var(--color-gray2);
+
+  --color-links: var(--color-gray1);
+}

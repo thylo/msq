@@ -1,0 +1,16 @@
+
+// ==========================================
+// body
+// ==========================================
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background1);
+  color: var(--color-text);
+  font-size: 1rem;
+
+  @include mq(large) {
+    font-size: calc(18 / 16 * 1rem);
+  }
+}

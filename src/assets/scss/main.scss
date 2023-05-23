@@ -1,9 +1,27 @@
 @import "settings/settings.mediaqueries";
+@import "settings/settings.typography";
+@import "settings/settings.spacings";
+@import "settings/settings.colors";
 
 @import "mixins/mixins.media-queries.scss";
 
 @import "objects/objects.list-bare";
 
+@import "base/base.html";
+@import "base/base.body";
+@import "base/base.margins";
+@import "base/base.links";
+
 @import "layouts/layouts.containers";
+
 @import "components/components.mainnav";
+@import "components/components.header";
+@import "components/components.about";
+@import "components/components.repertoires";
+@import "components/components.gallery";
+@import "components/components.members";
+@import "components/components.agenda";
+@import "components/components.contact";
+
 @import "utilities/utilities.spacings";
+
