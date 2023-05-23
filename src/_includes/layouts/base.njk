@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{ metaTitle }} - {{ site.title }}</title>
-  <meta name="description" content="{{ metaDescription }}">
+  <title>{{ metaTitle }}</title>
+  <link rel="stylesheet" href="/css/main.min.css">
 
-  <link rel="stylesheet" href="/css/main.min.css?ref={{ site.buildTime | dateISO }}">
+  <!-- open graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ metaTitle }}">
+  <meta property="og:image" content="{{ metaImage }}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:description" content="{{ metaDescription }}">
 
-  <!-- Feed -->
-  <link rel="alternate" href="/feed.xml" title="{{ site.title }} - Blog RSS" type="application/atom+xml">
+  <!-- twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="{{ site.twitter }}">
+  <meta name="twitter:title" content="{{ metaTitle }}">
+  <meta name="twitter:description" content="{{ metaDescription }}">
+  <meta name="twitter:image" content="{{ metaImage }}">
 
-  <!-- Twitter + Open Graph -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:creator" content="{{ site.authorTwitter }}" />
-  <meta property="og:url" content="{{ site.url ~ page.url }}" />
-  <meta property="og:title" content="{{ metaTitle }}" />
-  <meta property="og:description" content="{{ metaDescription }}" />
-  <meta property="og:image" content="{{ metaImage }}" />
-
-  <!-- Apple icon (minimal) -->
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
+  <link rel="stylesheet" href="/assets/css/main.css?ref={{ site.buildTime | dateISO }}">
 </head>
 <body>
   {% include "partials/siteheader.njk" %}
@@ -30,6 +29,6 @@
   {% block content %}{% endblock %}
 
   {% include "partials/sitefooter.njk" %}
-  <script src="/js/main.bundle.js?ref={{ site.buildTime | dateISO }}"></script>
+  <script src="/assets/js/main.bundle.js?ref={{ site.buildTime | dateISO }}"></script>
 </body>
 </html>

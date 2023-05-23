@@ -1,0 +1,9 @@
+<li>
+    {% if (concert.nice_date) %}
+        <span>{{ concert.nice_date }}</span>
+    {% else %}
+        <span>{{ concert.date | dateMed('fr') }}</span>
+    {% endif %}
+    <span>{{ concert.name }}</span>
+    <span>{{ concert.where }}</span>
+</li>

@@ -1,0 +1,74 @@
+---
+permalink: /{{ locale }}/index.html
+---
+
+{% extends "layouts/base.njk" %}
+
+{% set metaTitle = site[locale].metaTitle %}
+{% set metaDescription = site[locale].metaDescription %}
+{% set metaImage = site[locale].metaImage %}
+
+{% block content %}
+    {# page content #}
+    <header>
+        <h1><span>Mosaic</span><span>Saxophone Quartet</span></h1>
+        <blockquote>
+            {{ hero.quote }}
+            {{ hero.author }}
+        </blockquote>
+    </header>
+    <section>
+        <h2>{{ about.title }}</h2>
+        <div>{{ about.body }}</div>
+    </section>
+    <section>
+        <ul>
+            {% for member in members %}
+                <li>
+                    <span>{{ member.title }}</span>
+                    <span>{{ member.instrument }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>{{ t.videos }}</h2>
+    </section>
+    <section>
+        <h2>{{ t.gallery }}</h2>
+    </section>
+    <section>
+        <h2>{{ t.repertoires }}</h2>
+    </section>
+    <section>
+        <h2>{{ t.see_us_live }}</h2>
+        <h3>{{ t.past_events }}</h3>
+        <ul>
+            {% for concert in past_concerts %}
+                {% include 'partials/concert.njk' %}
+            {% endfor %}
+        </ul>
+        <h3>{{ t.future_events }}</h3>
+        <ul>
+            {% for concert in future_concerts %}
+                {% include 'partials/concert.njk' %}
+            {% endfor %}
+        </ul>
+    </section>
+    <section>
+        <h2>{{ strings.get_in_touch }}</h2>
+        <div>
+            <a href="mailto:{{ site.contact.mail }}">{{ site.contact.mail }}</a>
+            <ul>
+                {% for contact in site.contact.contacts %}
+                    <li>
+                        <a href="tel:{{ contact.phone }}">
+                            <span>{{ contact.phone }}</span>
+                        </a>
+                        <span>{{ contact.name }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endblock %}

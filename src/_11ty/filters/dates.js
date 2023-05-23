@@ -62,4 +62,23 @@ const dateYear = (date) => {
   return fullYear;
 };
 
-module.exports = { dateFeed, dateFormat, dateFull, dateISO, dateYear };
+/**
+ * Format date: readable date
+ *
+ * @param {Date} date - js date
+ * @returns {String} - formatted date
+ */
+const dateMed = (date, locale = "en") => {
+  return DateTime.fromJSDate(new Date(date))
+    .setLocale(locale)
+    .toLocaleString(DateTime.DATETIME_MED);
+};
+
+module.exports = {
+  dateFeed,
+  dateMed,
+  dateFormat,
+  dateFull,
+  dateISO,
+  dateYear,
+};
