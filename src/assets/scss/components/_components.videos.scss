@@ -1,0 +1,20 @@
+.c-videos {
+  padding-top: calc(64 / 16 * 1rem);
+  @include mq(medium) {
+    padding: calc(96 / 16 * 1rem) 0;
+    gap: var(--grid-gap);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+  }
+  &__content{
+    grid-column: 2 / 6;
+  }
+  &__video{
+    display: none;
+    @include mq(medium) {
+      display: block;
+      grid-column: 6 / 13;
+    }
+  }
+}

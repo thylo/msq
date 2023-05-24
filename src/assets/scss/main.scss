@@ -1,3 +1,5 @@
+@import "../../../node_modules/swiper/swiper";
+
 @import "settings/settings.mediaqueries";
 @import "settings/settings.typography";
 @import "settings/settings.spacings";
@@ -14,9 +16,11 @@
 
 @import "layouts/layouts.containers";
 
-@import "components/components.mainnav";
+@import "components/components.titles";
 @import "components/components.header";
 @import "components/components.about";
+@import "components/components.videos";
+@import "components/components.videoplayer";
 @import "components/components.repertoires";
 @import "components/components.gallery";
 @import "components/components.members";

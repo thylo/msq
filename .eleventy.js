@@ -1,10 +1,11 @@
-// filters
-const limit = require("./src/_11ty/filters/limit.js");
-const dates = require("./src/_11ty/filters/dates.js");
-const { EleventyI18nPlugin } = require("@11ty/eleventy");
 const yaml = require("js-yaml");
+const { EleventyI18nPlugin } = require("@11ty/eleventy");
+const { dateMed, dateIso, dateYear } = require("./src/_11ty/filters/dates");
+const { translate } = require("./src/_11ty/filters/translate");
+const imageShortCode = require("./src/_11ty/shortcodes/imageShortCode");
 
-module.exports = function (eleventyConfig) {
+module.exports = (eleventyConfig) => {
+  //Plugins
   eleventyConfig.addPlugin(EleventyI18nPlugin, {
     // any valid BCP 47-compatible language tag is supported
     defaultLanguage: "en", // Required, this site uses "en"
@@ -20,14 +21,13 @@ module.exports = function (eleventyConfig) {
   //eleventyConfig.addCollection("concerts", concerts);
 
   // filters
-  eleventyConfig.addFilter("limit", limit);
-  eleventyConfig.addFilter("dateISO", dates.dateISO);
-  eleventyConfig.addFilter("dateFeed", dates.dateFeed);
-  eleventyConfig.addFilter("dateFull", dates.dateFull);
-  eleventyConfig.addFilter("dateFormat", dates.dateFormat);
-  eleventyConfig.addFilter("dateYear", dates.dateYear);
-  eleventyConfig.addFilter("dateMed", dates.dateMed);
+  eleventyConfig.addFilter("dateISO", dateIso);
+  eleventyConfig.addFilter("dateYear", dateYear);
+  eleventyConfig.addFilter("dateMed", dateMed);
+  eleventyConfig.addFilter("translate", translate);
 
+  //shortcode
+  eleventyConfig.addShortcode("image", imageShortCode);
   // ignores
   eleventyConfig.ignores.add("src/assets/**/*");
   eleventyConfig.watchIgnores.add("src/assets/**/*");
@@ -37,12 +37,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "./src/static": "/" });
   eleventyConfig.addPassthroughCopy("./src/assets/img");
   eleventyConfig.addPassthroughCopy("./src/assets/fonts");
+  eleventyConfig.addPassthroughCopy("./src/assets/svg");
 
   // server config
   eleventyConfig.setServerOptions({
     watch: ["./dist/assets/css/**/*.css", "./dist/assets/js/**/*.js"],
     port: 3000,
   });
+
+
 
   // base config
   return {

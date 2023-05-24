@@ -1,9 +1,10 @@
 .c-header {
+  color: var(--color-white);
   position: relative;
-  background: linear-gradient(180deg, rgba(21,34,33,0) 0%, #152221 21.7%, #152221 100%, rgba(21,34,33,0) 100%);
+
   &__background {
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
@@ -11,9 +12,101 @@
     width: 100%;
     z-index: 0;
   }
+
   &__content {
+    min-height: calc(32 * 16 / 16 * 1rem);
+    @include mq(medium) {
+      min-height: calc(64 * 16 / 16 * 1rem);
+    }
     position: relative;
     z-index: 1;
+    height: 100%;
+    @include mq(medium) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  &__nav{
+    width: 100%;
+  }
+
+  &__quote {
+    margin: 0;
+  }
+
+  &__logo {
+    width: 16rem;
+  }
+}
+
+.c-mainnav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: calc(21 / 16 * 1rem) 0;
+  @include mq(medium) {
+    flex-direction: row;
+  }
+
+  &__items {
+    order: 1;
+    @include mq(medium){
+      order:1
+    }
+  }
+
+  &__link {
+    order: 2;
+    margin: 0;
+    @include mq(medium){
+      order:0
+    }
+  }
+}
+
+.c-mainnav-items {
+  display: flex;
+  gap: calc(16 / 16 * 1rem);
+  padding: calc(10 / 16 * 1rem) calc(16 / 16 * 1rem);
+  justify-content: center;
+  align-items: center;
+  background: var(--color-background4);
+  border-radius: 99rem;
+  text-transform: uppercase;
+}
+
+.c-mainnav-link {
+  text-decoration: none;
+
+  &.is-active {
+    color: var(--color-brand);
+  }
+}
+
+.c-header-quote {
+  text-align: center;
+  padding: calc(60 / 16 * 1rem) 0;
+  background: linear-gradient(180deg, rgba(21, 34, 33, 0) 0%, #152221 21.7%, #152221 100%, rgba(21, 34, 33, 0) 100%);
+  @include mq(medium) {
+    padding: 224px 0 130px 0;
+  }
+
+  q::before,
+  q::after {
+    color: var(--color-sand4);
+  }
+
+  &__quote {
+    margin: 0;
+    font-size: clamp(24 / 16 * 1rem, 1rem + 3vw, 36 / 16 * 1rem);
+  }
+
+  &__author {
+    font-size: clamp(16 / 16 * 1rem, 1rem + 3vw, 36 / 16 * 1rem);
+    line-height: 1.25;
+    opacity: 50%;
   }
 }
 

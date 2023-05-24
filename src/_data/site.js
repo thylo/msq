@@ -22,4 +22,9 @@ module.exports = {
     "https://www.youtube.com/watch?v=_lK4cX5xGiQ",
     "https://www.youtube.com/watch?v=fKFbnhcNnjE",
   ],
+  links: [
+    { locale: "en", label: "en" },
+    { locale: "fr", label: "fr" },
+    { locale: "lu", label: "lu" },
+  ],
 };

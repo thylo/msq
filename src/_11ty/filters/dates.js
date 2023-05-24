@@ -1,84 +1,17 @@
-const { DateTime } = require("luxon");
+const { format, formatISO, getYear } = require("date-fns");
+const { fr, en } = require("date-fns/locale");
 
-/**
- * Format date: Feeds
- *
- * @param {Date} date - JS date
- * @returns {String} - formatted date
- */
-const dateFeed = (date) => {
-  const jsDate = new Date(date);
-  const dt = DateTime.fromJSDate(jsDate);
-  return dt.toRFC2822();
+module.exports.dateIso = (date) => {
+  return formatISO(new Date(date));
 };
 
-/**
- * Format date: Luxon format string
- *
- * @param {Date} date - JS date
- * @param {String} format - Luxon format string
- * @param {String} locale - locale code
- * @returns {String} - formatted date
- */
-const dateFormat = (date, format, locale = "en") => {
-  const jsDate = new Date(date);
-  const dt = DateTime.fromJSDate(jsDate);
-  return dt.setLocale(locale).toFormat(format);
+module.exports.dateYear = (date) => {
+  return getYear(new Date(date));
 };
 
-/**
- * Format date: human readable format
- *
- * @param {Date} date - JS date
- * @param {String} locale - locale code
- * @returns {String} - formatted date
- */
-const dateFull = (date, locale = "en") => {
-  const jsDate = new Date(date);
-  const dt = DateTime.fromJSDate(jsDate);
-  return dt.setLocale(locale).toLocaleString(DateTime.DATE_FULL);
-};
-
-/**
- * Format date: ISO
- * @param {Date} date - JS Date
- * @returns {String} - formatted date
- */
-const dateISO = (date) => {
-  const jsDate = new Date(date);
-  const dt = DateTime.fromJSDate(jsDate);
-  return dt.toISO();
-};
-
-/**
- * Format date: year
- *
- * @param {Date} date - js date
- * @returns {String} - formatted date
- */
-const dateYear = (date) => {
-  const jsDate = new Date(date);
-  const fullYear = jsDate.getFullYear();
-  return fullYear;
-};
-
-/**
- * Format date: readable date
- *
- * @param {Date} date - js date
- * @returns {String} - formatted date
- */
-const dateMed = (date, locale = "en") => {
-  return DateTime.fromJSDate(new Date(date))
-    .setLocale(locale)
-    .toLocaleString(DateTime.DATETIME_MED);
-};
-
-module.exports = {
-  dateFeed,
-  dateMed,
-  dateFormat,
-  dateFull,
-  dateISO,
-  dateYear,
+module.exports.dateMed = (date, locale = "en") => {
+  if (date) {
+    return format(new Date(date), "dd MMMM, kk:ss");
+  }
+  return "...";
 };
