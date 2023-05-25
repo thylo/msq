@@ -44,8 +44,8 @@ permalink: /{{ locale }}/index.html
 <section class="c-about">
     <div class="c-about__content l-container">
         <div class="c-about__intro">
-            <h1 class="h2">{{ about.title }}</h1>
-            <div>{{ about.body }}</div>
+            <h1 class="h2">{{ title }}</h1>
+            <div>{{ content }}</div>
         </div>
         <h2 class="c-about__members-title">{{ t.members }}</h2>
         <section class="c-about__members c-members">
@@ -102,9 +102,18 @@ permalink: /{{ locale }}/index.html
         </button>
     </div>
 </section>
+
 <section class="c-repertoires l-container">
-    <h2 class="h2">{{ t.repertoires }}</h2>
+    <h2 class="h2 c-repertoires__title">{{ t.repertoires }}</h2>
+    <ul class="o-list-bare">
+        {% for item in collections.repertoires %}
+            {% if item.data.locale == locale %}
+                {% render 'partials/repertoire.liquid', repertoire: item.data %}
+            {% endif %}
+        {% endfor %}
+    </ul>
 </section>
+
 <section class="c-agenda l-container">
     <h2 class="h2">{{ t.see_us_live }}</h2>
     <h3>{{ t.past_events }}</h3>
@@ -120,11 +129,12 @@ permalink: /{{ locale }}/index.html
         {% endfor %}
     </ul>
 </section>
+
 <section class="c-contact l-container">
     <h2 class="h2">{{ strings.get_in_touch }}</h2>
     <div>
         <a href="mailto:{{ site.contact.mail }}">{{ site.contact.mail }}</a>
-        <ul>
+        <ul class="o-list-bare">
             {% for contact in site.contact.contacts %}
                 <li>
                     <a href="tel:{{ contact.phone }}">

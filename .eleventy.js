@@ -3,6 +3,7 @@ const { EleventyI18nPlugin } = require("@11ty/eleventy");
 const { dateMed, dateIso, dateYear } = require("./src/_11ty/filters/dates");
 const { translate } = require("./src/_11ty/filters/translate");
 const imageShortCode = require("./src/_11ty/shortcodes/imageShortCode");
+const repertoires = require("./src/_11ty/collections/repertoires");
 
 module.exports = (eleventyConfig) => {
   //Plugins
@@ -19,6 +20,7 @@ module.exports = (eleventyConfig) => {
   //eleventyConfig.addCollection("blogposts", blogposts);
   //eleventyConfig.addCollection("projects", projects);
   //eleventyConfig.addCollection("concerts", concerts);
+  eleventyConfig.addCollection('repertoires', repertoires);
 
   // filters
   eleventyConfig.addFilter("dateISO", dateIso);
@@ -44,8 +46,6 @@ module.exports = (eleventyConfig) => {
     watch: ["./dist/assets/css/**/*.css", "./dist/assets/js/**/*.js"],
     port: 3000,
   });
-
-
 
   // base config
   return {

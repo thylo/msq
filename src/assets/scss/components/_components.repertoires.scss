@@ -1,0 +1,18 @@
+.c-repertoires {
+  padding: calc(60 / 16 * 1rem);
+  &__title {
+    margin-bottom: calc(32 / 16 * 1rem);
+    @include mq(medium){
+      margin-bottom: calc(60 / 16 * 1rem);
+    }
+  }
+  &__body{
+    margin-bottom: calc(40 / 16 * 1rem);
+    @include mq(medium){
+      margin-bottom: calc(60 / 16 * 1rem);
+    }
+  }
+}
+.c-repertoire-work {
+  display: flex;
+}

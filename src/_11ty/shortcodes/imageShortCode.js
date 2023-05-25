@@ -1,7 +1,7 @@
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
 function imageShortcode(src, alt, sizes = "(min-width: 1024px) 100vw, 50vw", className) {
-  console.log(`Generating image(s) from:  ${src}`);
+  //console.log(`Generating image(s) from:  ${src}`);
   let options = {
     widths: [600, 900, 1500],
     formats: ["webp", "jpeg"],

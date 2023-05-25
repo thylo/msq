@@ -1,0 +1,14 @@
+{
+  "locale": "fr",
+  "layout": "index.liquid",
+  "t": {
+    "members": "Les saxophonistes",
+    "videos": "Videos",
+    "gallery": "Galerie",
+    "repertoires": "Nos repertoires",
+    "see_us_live" : "Venir nous voir",
+    "future_events" : "Evenements futurs",
+    "past_events" : "Evenements passés",
+    "get_in_touch" : "Nous contacter"
+  }
+}

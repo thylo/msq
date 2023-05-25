@@ -1,0 +1,12 @@
+<li class="c-repertoire">
+    <h3>{{ repertoire.name }}</h3>
+    <div class="c-repertoires__body">{{ repertoire.content }}</div>
+    <ul class="o-list-bare">
+        {% for work in repertoire.works %}
+            <li class="c-repertoire-work">
+                <h4>{{ work.title }}</h4>
+                <p>{{ work.description }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</li>

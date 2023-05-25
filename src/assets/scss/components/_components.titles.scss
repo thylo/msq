@@ -20,7 +20,8 @@
 }
 
 .h2 {
-  font-size: clamp(29 / 16 * 1rem, 1rem + 2.5vw, 32 / 16 * 1rem);
+  color: var(--color-sand2);
+  font-size: clamp(40 / 16 * 1rem, 1rem + 2.5vw, 54 / 16 * 1rem);
 }
 
 .h3 {
