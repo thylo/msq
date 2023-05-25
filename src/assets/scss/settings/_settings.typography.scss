@@ -2,8 +2,14 @@
 // typography
 // ==========================================
 
-
+/*
 :root {
   --fontstack-main: "ABC Diatype", "Helvetica Neue", system-ui, sans-serif;
   --fontstack-alt: "Reckless Neue", "Georgia", serif;
+}
+*/
+
+:root {
+  --fontstack-main: "Helvetica Neue", system-ui, sans-serif;
+  --fontstack-alt: "Georgia", serif;
 }
