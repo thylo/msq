@@ -1,9 +1,11 @@
-<li>
+<li class="c-concert">
     {% if concert.nice_date %}
-        <span>{{ concert.nice_date }}</span>
+        <p class="c-concert__date">{{ concert.nice_date }}</p>
     {% else %}
-        <span>{{ concert.date | dateMed: 'fr' }}</span>
+        <p class="c-concert__date">{{ concert.date | dateMed: 'fr' }}</p>
     {% endif %}
-    <span>{{ concert.name }}</span>
-    <span>{{ concert.where }}</span>
+    <h5 class="c-concert__title">
+        <span>{{ concert.name }}</span>
+        <span>{{ concert.where }}</span>
+    </h5>
 </li>

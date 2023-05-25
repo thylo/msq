@@ -1,18 +1,46 @@
 .c-repertoires {
   padding: calc(60 / 16 * 1rem);
+  @include mq(medium) {
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  &__wrapper,
+  &__list {
+    grid-column: 2 / 13;
+  }
+
   &__title {
     margin-bottom: calc(32 / 16 * 1rem);
-    @include mq(medium){
+    @include mq(medium) {
       margin-bottom: calc(60 / 16 * 1rem);
     }
   }
-  &__body{
+  &__body {
     margin-bottom: calc(40 / 16 * 1rem);
-    @include mq(medium){
+    font-size: calc(16 / 16 * 1rem);
+    line-height: 24px;
+    @include mq(medium) {
+      font-size: calc(22 / 16 * 1rem);
+      line-height: 34px;
       margin-bottom: calc(60 / 16 * 1rem);
     }
   }
 }
+
+.c-repertoire{
+}
+
 .c-repertoire-work {
-  display: flex;
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: repeat(11, 1fr);
+  font-size: calc(18 / 16 * 1rem);
+  &__title {
+    grid-column: 1 / 5;
+  }
+  &__body {
+    grid-column: 5 / 12;
+  }
 }

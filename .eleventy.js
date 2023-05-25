@@ -20,7 +20,7 @@ module.exports = (eleventyConfig) => {
   //eleventyConfig.addCollection("blogposts", blogposts);
   //eleventyConfig.addCollection("projects", projects);
   //eleventyConfig.addCollection("concerts", concerts);
-  eleventyConfig.addCollection('repertoires', repertoires);
+  eleventyConfig.addCollection("repertoires", repertoires);
 
   // filters
   eleventyConfig.addFilter("dateISO", dateIso);
@@ -29,7 +29,11 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addFilter("translate", translate);
 
   //shortcode
-  eleventyConfig.addShortcode("image", imageShortCode);
+  eleventyConfig.addShortcode("image", imageShortCode([600, 900, 1500]));
+  eleventyConfig.addShortcode(
+    "bgImage",
+    imageShortCode([320, 640, 1024, 1920])
+  );
   // ignores
   eleventyConfig.ignores.add("src/assets/**/*");
   eleventyConfig.watchIgnores.add("src/assets/**/*");

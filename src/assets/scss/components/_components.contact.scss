@@ -1,0 +1,23 @@
+.c-contact {
+  text-align: center;
+  font-size: 24px;
+  @include mq(medium){
+    font-size: 28px;
+  }
+  &__links {
+    display: flex;
+    justify-content: center;
+    gap: calc(60 / 16 * 1rem);
+  }
+  &__link{
+
+    a {
+      color: var(--color-green2);
+      display: block;
+    }
+    span{
+      font-style: italic;
+      font-size: 18px;
+    }
+  }
+}

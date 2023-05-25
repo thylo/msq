@@ -1,0 +1,86 @@
+.c-agenda {
+  @include mq(medium) {
+    margin: 120px 0;
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+  }
+  &__title {
+    grid-column: 1/5;
+    text-align: right;
+    color: var(--color-green2);
+    @include mq(medium) {
+      font-size: 54px;
+      line-height: 64px;
+      font-weight: normal;
+    }
+  }
+  &__content {
+    grid-column: 5/13;
+    background: var(--color-sand1);
+    box-sizing: border-box;
+    padding: 0 1rem calc(60 / 16 * 1rem) 1rem;
+    @include mq(medium) {
+      padding: calc(30 / 16 * 1rem) calc(60 / 16 * 1rem) calc(60 / 16 * 1rem)
+        calc(60 / 16 * 1rem);
+    }
+  }
+  &__subtitle {
+    text-transform: uppercase;
+    font-weight: bold;
+    background: var(--color-sand1);
+    padding: 0 1rem;
+    margin: 0;
+    z-index: 1;
+    position: relative;
+  }
+  &__subtitle-wrapper {
+    padding: calc(30 / 16 * 1rem) calc(24 / 16 * 1rem);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5px;
+    &:after {
+      z-index: 0;
+      content: "";
+      background: var(--color-green2);
+      height: 1px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+    }
+  }
+  &__past{
+    opacity: 50%;
+  }
+}
+
+.c-concert {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: calc(32 / 16 * 1rem);
+  &__date {
+    order: 1;
+    font-style: italic;
+    font-size: 1rem;
+    margin: 0;
+    @include mq(medium) {
+      order: 2;
+    }
+  }
+  &__title {
+    margin: 0;
+    order: 2;
+    font-size: calc(20 / 16 * 1rem);
+    line-height: 28px;
+    font-weight: normal;
+    @include mq(medium) {
+      order: 1;
+      font-size: calc(24 / 16 * 1rem);
+      line-height: 24px;
+    }
+  }
+}

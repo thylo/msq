@@ -10,7 +10,7 @@ permalink: /{{ locale }}/index.html
 
 {% block content %}
 <header class="c-header">
-    <img src="/assets/img/hero_image.jpg" alt="msq hero image" class="c-header__background">
+    {% bgImage "src/assets/img/hero_image.jpg", "MSQ", "100vw", "c-header__background" %}
     <div class="c-header__content">
         <nav class="c-header__nav  c-mainnav l-container" aria-label="main navigation">
             <p class="c-mainnav__link">
@@ -103,9 +103,13 @@ permalink: /{{ locale }}/index.html
     </div>
 </section>
 
+
 <section class="c-repertoires l-container">
-    <h2 class="h2 c-repertoires__title">{{ t.repertoires }}</h2>
-    <ul class="o-list-bare">
+    <div class="c-repertoires__wrapper">
+        <h2 class="h2 c-repertoires__title">{{ t.repertoires }}</h2>
+        <select class="c-repertoires__select js-repertoire-select u-hidden" id=""></select>
+    </div>
+    <ul class="o-list-bare c-repertoires__list">
         {% for item in collections.repertoires %}
             {% if item.data.locale == locale %}
                 {% render 'partials/repertoire.liquid', repertoire: item.data %}
@@ -114,31 +118,44 @@ permalink: /{{ locale }}/index.html
     </ul>
 </section>
 
-<section class="c-agenda l-container">
-    <h2 class="h2">{{ t.see_us_live }}</h2>
-    <h3>{{ t.past_events }}</h3>
-    <ul>
-        {% for concert in past_concerts %}
-            {% render 'partials/concert.liquid', concert: concert %}
-        {% endfor %}
-    </ul>
-    <h3>{{ t.future_events }}</h3>
-    <ul>
-        {% for concert in future_concerts %}
-            {% render 'partials/concert.liquid', concert: concert %}
-        {% endfor %}
-    </ul>
+<section class="c-intersection">
+    {% bgImage "src/assets/img/intersection_image.jpg", "MSQ walking in park", "100vw" %}
 </section>
 
-<section class="c-contact l-container">
-    <h2 class="h2">{{ strings.get_in_touch }}</h2>
-    <div>
-        <a href="mailto:{{ site.contact.mail }}">{{ site.contact.mail }}</a>
-        <ul class="o-list-bare">
+<section class="l-container">
+    <div class="c-agenda">
+        <h2 class="h2 c-agenda__title">{{ t.see_us_live }}</h2>
+        <div class="c-agenda__content">
+            <div class="c-agenda__subtitle-wrapper">
+                <h3 class="c-agenda__subtitle">{{ t.past_events }}</h3>
+            </div>
+            <ul class="o-list-bare">
+                {% for concert in past_concerts %}
+                    {% render 'partials/concert.liquid', concert: concert %}
+                {% endfor %}
+            </ul>
+            <div class="c-agenda__subtitle-wrapper">
+                <h3 class="c-agenda__subtitle">{{ t.future_events }}</h3>
+            </div>
+            <ul class="o-list-bare c-agenda__past">
+                {% for concert in future_concerts %}
+                    {% render 'partials/concert.liquid', concert: concert %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section class="l-container">
+    <div class="c-contact">
+        <h2 class="h2">{{ t.get_in_touch }}</h2>
+        <ul class="c-contact__links o-list-bare">
+            <li class="c-contact__link"><a href="mailto:{{ site.contact.mail }}">{{ site.contact.mail }}</a></li>
             {% for contact in site.contact.contacts %}
-                <li>
+                <li class="c-contact__link">
                     <a href="tel:{{ contact.phone }}">
-                        <span>{{ contact.phone }}</span>
+                        {{ contact.phone }}
                     </a>
                     <span>{{ contact.name }}</span>
                 </li>
@@ -146,4 +163,18 @@ permalink: /{{ locale }}/index.html
         </ul>
     </div>
 </section>
+<footer class="l-container">
+    <div class="c-footer">
+        <div class="c-footer__copyrights">
+            <h6>Copyrights</h6>
+            <p>&copy; {{ site.buildTime | dateYear }} - thylo.be</p>
+        </div>
+        <div class="c-footer__img">
+            {% image "src/assets/img/footer_image.jpg", "MSQ walking in park", "(min-width: 30em) 50vw, 100vw" %}
+        </div>
+        <div class="c-footer__social">
+            <a href="facebook.com">{% render "svg/facebook_logo.svg" %}</a>
+        </div>
+    </div>
+</footer>
 {% endblock %}

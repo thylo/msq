@@ -1,0 +1,33 @@
+.c-footer {
+
+  padding-top: calc(60 / 16 * 1rem);
+
+  @include mq(medium){
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: repeat(12, 1fr);
+    align-items: end;
+  }
+  &__copyrights{
+    grid-column: 1/3;
+    padding-bottom: calc(32/16*1rem);
+  }
+  &__social{
+    grid-column: 11/13;
+    text-align: end;
+    padding-bottom: calc(32/16*1rem);
+  }
+  &__img {
+    grid-column: 3/11;
+    overflow: hidden;
+    border-top-left-radius: 999rem;
+    border-top-right-radius: 999rem;
+
+    img {
+      height: auto;
+      width: 100%;
+      object-fit: cover;
+      vertical-align: bottom;
+    }
+  }
+}
