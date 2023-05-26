@@ -29,7 +29,18 @@
   }
 }
 
-.c-repertoire{
+.c-repertoire-select {
+  background: var(--color-gray1);
+  padding: 1rem 2rem;
+  border-radius: 99rem;
+  display: inline-flex;
+  gap:1rem;
+  &__select {
+    font-size: calc(22 / 16 * 1rem);
+    appearance: none;
+    border: none;
+    background: none;
+  }
 }
 
 .c-repertoire-work {

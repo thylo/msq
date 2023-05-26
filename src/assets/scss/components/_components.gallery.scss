@@ -1,15 +1,14 @@
 .c-gallery {
   position: relative;
-
   &__background {
+    background: var(--color-sand1);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 0;
     @include mq(medium) {
-      background: var(--color-sand1);
-      position: absolute;
-      top: 0;
       left: 0;
       right: 0;
-      height: 100%;
-      z-index: 0;
     }
   }
 
@@ -67,14 +66,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all .15s linear;
+    transition: all 0.15s linear;
 
     &:first-child {
       transform: rotate(180deg);
     }
 
     &:hover {
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 }

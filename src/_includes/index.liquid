@@ -12,27 +12,31 @@ permalink: /{{ locale }}/index.html
 <header class="c-header">
     {% bgImage "src/assets/img/hero_image.jpg", "MSQ", "100vw", "c-header__background" %}
     <div class="c-header__content">
-        <nav class="c-header__nav  c-mainnav l-container" aria-label="main navigation">
-            <p class="c-mainnav__link">
-                <a href="/" class="c-header__logo">{% render "svg/logo.svg" %}</a>
-            </p>
-            <ul class="o-list-bare c-mainnav__items c-mainnav-items">
-                {% for item in site.links %}
-                    {% assign activeClass = "" %}
-                    {% assign activeAria = "" %}
-                    {% if item.locale == locale %}
-                        {% assign activeClass = "is-active" %}
-                        {% assign activeAria = 'aria-current="page"' %}
-                    {% endif %}
-                    <li>
-                        <a class="c-mainnav-items__link c-mainnav-link {{ activeClass }}"
-                           href="/{{ item.locale }}" {{ activeAria }}>
-                            {{ item.label }}
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
+
+        <nav class="c-header__nav" aria-label="main navigation">
+            <div class="c-mainnav l-container">
+                <p class="c-mainnav__link">
+                    <a href="/" class="c-header__logo">{% render "svg/logo.svg" %}</a>
+                </p>
+                <ul class="o-list-bare c-mainnav__items c-mainnav-items">
+                    {% for item in site.links %}
+                        {% assign activeClass = "" %}
+                        {% assign activeAria = "" %}
+                        {% if item.locale == locale %}
+                            {% assign activeClass = "is-active" %}
+                            {% assign activeAria = 'aria-current="page"' %}
+                        {% endif %}
+                        <li>
+                            <a class="c-mainnav-items__link c-mainnav-link {{ activeClass }}"
+                               href="/{{ item.locale }}" {{ activeAria }}>
+                                {{ item.label }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
         </nav>
+
         <figure class="c-header__quote c-header-quote">
             <blockquote class="c-header-quote__quote">
                 <q>{{ hero.quote }}</q>
@@ -44,8 +48,8 @@ permalink: /{{ locale }}/index.html
 <section class="c-about">
     <div class="c-about__content l-container">
         <div class="c-about__intro">
-            <h1 class="h2">{{ title }}</h1>
-            <div>{{ content }}</div>
+            <h1 class="h2 c-about__title">{{ title }}</h1>
+            {{ content }}
         </div>
         <h2 class="c-about__members-title">{{ t.members }}</h2>
         <section class="c-about__members c-members">
@@ -107,7 +111,10 @@ permalink: /{{ locale }}/index.html
 <section class="c-repertoires l-container">
     <div class="c-repertoires__wrapper">
         <h2 class="h2 c-repertoires__title">{{ t.repertoires }}</h2>
-        <select class="c-repertoires__select js-repertoire-select u-hidden" id=""></select>
+        <div class="c-repertoires__select c-repertoire-select" id="">
+            <select name="" id="" class="c-repertoire-select__select js-repertoire-select u-hidden"></select>
+            {% render "svg/select_arrow.svg" %}
+        </div>
     </div>
     <ul class="o-list-bare c-repertoires__list">
         {% for item in collections.repertoires %}
@@ -122,26 +129,28 @@ permalink: /{{ locale }}/index.html
     {% bgImage "src/assets/img/intersection_image.jpg", "MSQ walking in park", "100vw" %}
 </section>
 
-<section class="l-container">
-    <div class="c-agenda">
-        <h2 class="h2 c-agenda__title">{{ t.see_us_live }}</h2>
-        <div class="c-agenda__content">
-            <div class="c-agenda__subtitle-wrapper">
-                <h3 class="c-agenda__subtitle">{{ t.past_events }}</h3>
+<section class="c-agenda__background">
+    <div class="l-container">
+        <div class="c-agenda">
+            <h2 class="h2 c-agenda__title">{{ t.see_us_live }}</h2>
+            <div class="c-agenda__content">
+                <div class="c-agenda__subtitle-wrapper">
+                    <h3 class="c-agenda__subtitle">{{ t.past_events }}</h3>
+                </div>
+                <ul class="o-list-bare">
+                    {% for concert in past_concerts %}
+                        {% render 'partials/concert.liquid', concert: concert %}
+                    {% endfor %}
+                </ul>
+                <div class="c-agenda__subtitle-wrapper">
+                    <h3 class="c-agenda__subtitle">{{ t.future_events }}</h3>
+                </div>
+                <ul class="o-list-bare c-agenda__past">
+                    {% for concert in future_concerts %}
+                        {% render 'partials/concert.liquid', concert: concert %}
+                    {% endfor %}
+                </ul>
             </div>
-            <ul class="o-list-bare">
-                {% for concert in past_concerts %}
-                    {% render 'partials/concert.liquid', concert: concert %}
-                {% endfor %}
-            </ul>
-            <div class="c-agenda__subtitle-wrapper">
-                <h3 class="c-agenda__subtitle">{{ t.future_events }}</h3>
-            </div>
-            <ul class="o-list-bare c-agenda__past">
-                {% for concert in future_concerts %}
-                    {% render 'partials/concert.liquid', concert: concert %}
-                {% endfor %}
-            </ul>
         </div>
     </div>
 </section>
@@ -172,9 +181,9 @@ permalink: /{{ locale }}/index.html
                     <li class="u-margin-bottom-base">
                         <h6 class="u-margin-all-none c-copyrights__subtitle">{{ copyright.name }}</h6>
                         <ul class="o-list-bare">
-                        {% for link in copyright.links %}
-                            <li>&copy; <a href="{{ link.link }}">{{ link.name }}</a></li>
-                        {% endfor %}
+                            {% for link in copyright.links %}
+                                <li>&copy; <a href="{{ link.link }}">{{ link.name }}</a></li>
+                            {% endfor %}
                         </ul>
                     </li>
                 {% endfor %}
