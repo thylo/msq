@@ -74,17 +74,20 @@ permalink: /{{ locale }}/index.html
         <ul class="o-list-bare">
             {% for video in videos %}
                 <li>
-                    <h4>{{ video.title | translate: locale }}</h4>
-                    <h5>{{ video.subtitle | translate: locale }}</h5>
+                    <button class="js-video-btn c-video-btn" data-video-id="{{ video.id }}">
+                        <span class="c-video-btn__title">{{ video.title | translate: locale }}</span>
+                        <span class="c-video-btn__body">{{ video.subtitle | translate: locale }}</span>
+                    </button>
                 </li>
             {% endfor %}
         </ul>
     </div>
     <div class="c-videos__video">
-        {% render "partials/video.liquid" %}
+        {% for video in videos %}
+            {% render "partials/video.liquid", video: video %}
+        {% endfor %}
     </div>
 </section>
-
 <section class="c-gallery">
     <div class="c-gallery__background l-container"></div>
     <h2 class="c-gallery__title h2 l-container">{{ t.gallery }}</h2>

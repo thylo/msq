@@ -20,8 +20,14 @@ module.exports = {
     gallery: (data) => {
       return data.gallery.map((pic) => ({
         ...pic,
-        url: `src/gallery/${pic.file}`,
+        url: `src/content/gallery/${pic.file}`,
         alt: pic.alt || pic.file,
+      }));
+    },
+    videos: (data) => {
+      return data.videos.map((pic) => ({
+        ...pic,
+        url: `src/content/videos/${pic.image}`,
       }));
     },
   },

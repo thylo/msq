@@ -7,14 +7,54 @@
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
   }
-  &__content{
+  &__content {
     grid-column: 2 / 6;
   }
-  &__video{
+  &__video {
     display: none;
     @include mq(medium) {
       display: block;
       grid-column: 6 / 13;
+    }
+  }
+}
+.c-video-btn {
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  background: none;
+  display: block;
+  text-align: left;
+  margin-bottom: calc(40 / 16 * 1rem);
+  position: relative;
+  padding: 0;
+  width: 100%;
+  opacity: 60%;
+  &:hover {
+    opacity: 0.5;
+  }
+  &__title {
+    font-size: 24px;
+    line-height: 24px;
+    display: block;
+    margin-bottom: calc(12 / 16 * 1rem);
+  }
+  &__body {
+    font-size: 1rem;
+    font-style: italic;
+    display: block;
+  }
+  &.active {
+    opacity: 100%;
+    &:after {
+      position: absolute;
+      content: "";
+      height: 4px;
+      background: var(--color-sand2);
+      right: -60px;
+      z-index: 2;
+      top: .5rem;
+      width: 48px;
     }
   }
 }

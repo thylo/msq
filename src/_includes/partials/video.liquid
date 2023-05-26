@@ -1,15 +1,6 @@
-<div class="c-videoplayer  js-video-player" data-video-service="vimeo" data-video-id="174919644">
-    <a class="c-videoplayer__link  js-video-link" href="https://vimeo.com/174919644" aria-label="play video: video title">
-        <img src="https://picsum.photos/id/239/600/338"
-             srcset="https://picsum.photos/id/239/600/338 600w,
-                 https://picsum.photos/id/239/800/450 800w"
-             sizes="(min-width: 1440px) 720px,
-               (min-width: 750px) 50vw,
-               100vw"
-             class="c-videoplayer__cover"
-             loading="lazy"
-             decoding="async"
-             alt="">
+<div class="c-videoplayer  js-video-player" data-video-service="youtube" data-video-id="{{ video.id }}">
+    <a class="c-videoplayer__link  js-video-link" href="{{ video.link }}" aria-label="play video: video title">
+        {% image video.url, video.link, "(min-width: 30em) 625px, 100vw", 'c-videoplayer__cover' %}
     </a>
     <template class="js-video-template">
         <iframe src="" allow="autoplay; fullscreen" allowfullscreen></iframe>

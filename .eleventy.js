@@ -37,6 +37,7 @@ module.exports = (eleventyConfig) => {
   // ignores
   eleventyConfig.ignores.add("src/assets/**/*");
   eleventyConfig.watchIgnores.add("src/assets/**/*");
+  eleventyConfig.ignores.add("src/content/videos/*");
 
   // passthrough copy
   eleventyConfig.setServerPassthroughCopyBehavior("copy");
