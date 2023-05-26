@@ -165,9 +165,20 @@ permalink: /{{ locale }}/index.html
 </section>
 <footer class="l-container">
     <div class="c-footer">
-        <div class="c-footer__copyrights">
-            <h6>Copyrights</h6>
-            <p>&copy; {{ site.buildTime | dateYear }} - thylo.be</p>
+        <div class="c-footer__copyrights c-copyrights">
+            <h5 class="c-copyrights__title">Copyrights</h5>
+            <ul class="o-list-bare">
+                {% for copyright in copyrights %}
+                    <li class="u-margin-bottom-base">
+                        <h6 class="u-margin-all-none c-copyrights__subtitle">{{ copyright.name }}</h6>
+                        <ul class="o-list-bare">
+                        {% for link in copyright.links %}
+                            <li>&copy; <a href="{{ link.link }}">{{ link.name }}</a></li>
+                        {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
         <div class="c-footer__img">
             {% image "src/assets/img/footer_image.jpg", "MSQ walking in park", "(min-width: 30em) 50vw, 100vw" %}

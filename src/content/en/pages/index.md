@@ -12,6 +12,17 @@ members:
     instrument: Alto Saxophone
   - name: Mélina Zéléniuc
     instrument: Soprano Saxophone
+copyrights:
+  - name: Photography
+    links:
+      - name: Eric Engel
+        link: facebook.com
+  - name: Sound & videos
+    links:  
+      - name: Claude Schlim
+        link: twitter.com
+      - name: Claude Schlim
+        link: twitter.com
 ---
 
 Mosaïc : a combination of many disparate parts drawn together to form one thing.  

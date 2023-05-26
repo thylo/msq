@@ -31,3 +31,22 @@
     }
   }
 }
+
+.c-copyrights{
+  position: relative;
+  &__title{
+    text-transform: uppercase;
+    transform: rotate(90deg) translate(-50%);
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: -50%;
+  }
+  &__subtitle{
+    font-size: 18px;
+    line-height: 18px;
+  }
+  &__link{
+    font-size: 1rem;
+  }
+}
