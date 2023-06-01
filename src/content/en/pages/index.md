@@ -12,6 +12,8 @@ members:
     instrument: Alto Saxophone
   - name: Mélina Zéléniuc
     instrument: Soprano Saxophone
+  - name: Marie Liefrig
+    instrument: Violon  
 copyrights:
   - name: Photography
     links:
