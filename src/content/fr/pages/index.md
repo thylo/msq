@@ -26,7 +26,7 @@ copyrights:
 ---
 
 Mosaïc : « Œuvre disparate composée de pièces rapportées » [Larousse].  
-What better name for a quartet bringing together musicians with roots in Britain, Belgium, Luxembourg, France and Romania.  
-This diversity brought us together as friends and proves an endless source of musical inspiration.
-It is our pleasure to share the results with you, through the language of chamber music.  
-The little-known formation of the saxophone quartet won’t fail to surprise you, taking you on a journey across musical borders.
+Voilà qui nous définit si bien, nous qui sommes d'origine anglaise, belge, luxembourgeoise et franco- roumaine.  
+Cette diversité est une force qui enrichit nos échanges personnels et musicaux.
+C'est avec bonheur que nous vous partageons notre passion commune, celle qui s'exprime dans un langage universel, la musique de chambre.  
+La formation peu connue du quatuor de saxophones n'a pas fini de vous surprendre : bon voyage avec nous!
