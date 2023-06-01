@@ -14,7 +14,7 @@ members:
     instrument: saxofon sopran
 copyrights:
   - name: Photography
-    links:
+    links: 
       - name: Eric Engel
         link: [facebook.com](https://www.facebook.com/ericengel.ee)
   - name: Sound & videos
