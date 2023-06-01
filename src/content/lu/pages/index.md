@@ -27,7 +27,7 @@ copyrights:
 
 De Mosaïc Saxophone Quartet ass 2021 zu Lëtzebuerg entstanen.
 Mosaïc : „e Wierk, bont zesummegewürfelt aus verschiddene Deeler“.
-Dëst ass e schéint Bild fir eise Quartett, deen aus lëtzebuergeschen, engleschen, belschen, a franséische-rumänesche Wuerzelen besteet.  
+Dëst ass e schéint Bild fir eise Quartett, deen aus lëtzebuergeschen, engleschen, belschen, a franséische-rumänesche Wuerzelen besteet.
 Dës Diversitéit stäerkt a beräichert eise perséinlechen, a ganz besonnesch, eise musikaleschen Austausch.
-Eis grouss Leidenschaft ass d’Kammermusek, an zemools de Saxophonsquartett, dee nach net ëmmer esou bekannt ass -   
+Eis grouss Leidenschaft ass d’Kammermusek, an zemools de Saxophonsquartett, dee nach net ëmmer esou bekannt ass -
 dofir wëlle mir Iech mat vill Begeeschterung an dës kammermusikalesch Welt matrappen.
