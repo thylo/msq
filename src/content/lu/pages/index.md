@@ -5,28 +5,29 @@ hero:
   author: "Andrew Marvell"
 members:
   - name: Thibault Collienne
-    instrument: Baritone saxophone
+    instrument: saxofon bariton
   - name: Lydie Schroeder
-    instrument: Tenor saxophone
+    instrument: saxofon tenor
   - name: William Upton
-    instrument: Alto Saxophone
+    instrument: saxofon alt
   - name: Mélina Zéléniuc
-    instrument: Soprano Saxophone
+    instrument: saxofon sopran
 copyrights:
   - name: Photography
     links:
       - name: Eric Engel
-        link: facebook.com
+        link: [facebook.com](https://www.facebook.com/ericengel.ee)
   - name: Sound & videos
     links:  
       - name: Claude Schlim
-        link: twitter.com
+        link: [twitter.com](https://www.schlim.lu/cms/)
       - name: Claude Schlim
         link: twitter.com
 ---
 
-LU Mosaïc : a combination of many disparate parts drawn together to form one thing.  
-What better name for a quartet bringing together musicians with roots in Britain, Belgium, Luxembourg, France and Romania.  
-This diversity brought us together as friends and proves an endless source of musical inspiration.
-It is our pleasure to share the results with you, through the language of chamber music.  
-The little-known formation of the saxophone quartet won’t fail to surprise you, taking you on a journey across musical borders.
+De Mosaïc Saxophone Quartet ass 2021 zu Lëtzebuerg entstanen.
+Mosaïc : „e Wierk, bont zesummegewürfelt aus verschiddene Deeler“.
+Dëst ass e schéint Bild fir eise Quartett, deen aus lëtzebuergeschen, engleschen, belschen, a franséische-rumänesche Wuerzelen besteet.  
+Dës Diversitéit stäerkt a beräichert eise perséinlechen, a ganz besonnesch, eise musikaleschen Austausch.
+Eis grouss Leidenschaft ass d’Kammermusek, an zemools de Saxophonsquartett, dee nach net ëmmer esou bekannt ass -   
+dofir wëlle mir Iech mat vill Begeeschterung an dës kammermusikalesch Welt matrappen.
