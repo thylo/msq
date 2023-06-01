@@ -5,13 +5,13 @@ hero:
   author: "Andrew Marvell"
 members:
   - name: Thibault Collienne
-    instrument: Baritone saxophone
+    instrument: Saxophone baryton
   - name: Lydie Schroeder
-    instrument: Tenor saxophone
+    instrument: Saxophone ténor
   - name: William Upton
-    instrument: Alto Saxophone
+    instrument: Saxophone alto
   - name: Mélina Zéléniuc
-    instrument: Soprano Saxophone
+    instrument: Saxophone soprano
 copyrights:
   - name: Photography
     links:
