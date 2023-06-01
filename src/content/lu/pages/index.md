@@ -14,13 +14,13 @@ members:
     instrument: saxofon sopran
 copyrights:
   - name: Photography
-    links: 
+    links:
       - name: Eric Engel
-        link: [facebook.com](https://www.facebook.com/ericengel.ee)
+        link: 
   - name: Sound & videos
     links:  
       - name: Claude Schlim
-        link: [twitter.com](https://www.schlim.lu/cms/)
+        link: 
       - name: Claude Schlim
         link: twitter.com
 ---
