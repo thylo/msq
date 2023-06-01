@@ -25,7 +25,7 @@ copyrights:
         link: twitter.com
 ---
 
-FR Mosaïc : a combination of many disparate parts drawn together to form one thing.  
+Mosaïc : « Œuvre disparate composée de pièces rapportées » [Larousse].  
 What better name for a quartet bringing together musicians with roots in Britain, Belgium, Luxembourg, France and Romania.  
 This diversity brought us together as friends and proves an endless source of musical inspiration.
 It is our pleasure to share the results with you, through the language of chamber music.  
