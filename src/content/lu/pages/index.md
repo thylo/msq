@@ -16,13 +16,11 @@ copyrights:
   - name: Photography
     links:
       - name: Eric Engel
-        link: 
+        link: https://www.facebook.com/ericengel.ee
   - name: Sound & videos
     links:  
       - name: Claude Schlim
-        link: 
-      - name: Claude Schlim
-        link: twitter.com
+        link: https://www.schlim.lu/cms/
 ---
 
 De Mosaïc Saxophone Quartet ass 2021 zu Lëtzebuerg entstanen.
