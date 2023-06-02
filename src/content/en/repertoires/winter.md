@@ -7,11 +7,11 @@ works:
       description: Merry-Go-Round of Life (Howl's Moving Castle)
     - title: Joe Hisaishi, Arr. Yuto Yamada
       description: My Neighbor Totoro Medley
-     - title: Chick Corea, Arr. Rob Buckland
+    - title: Chick Corea, Arr. Rob Buckland
       description: Children's Songs Nr 3,7,9,14,18
-     - title: Fernande Decruck
+    - title: Fernande Decruck
       description: Pavane
-     - title: Eugène Bozza
+    - title: Eugène Bozza
       description: Andante et Scherzo     
 ---
 
