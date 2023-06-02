@@ -20,7 +20,7 @@ copyrights:
   - name: Sound & videos
     links:  
       - name: Claude Schlim
-        link: (https://www.schlim.lu/cms/)
+        link: https://www.schlim.lu/cms/
 ---
 
 Mosaïc : a combination of many disparate parts drawn together to form one thing.
