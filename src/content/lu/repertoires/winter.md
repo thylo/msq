@@ -4,7 +4,7 @@ works:
     - title: Pyotr Ilyich Tchaikovsky, Arr. Yuto Yamada
       description: Suite tirée du Ballet « Casse-Noisette », Op. 71a
     - title: Joe Hisaishi, Arr. Yuto Yamada
-      description: Merry)Go-Round of Life (Howl's Moving Castle)
+      description: Merry-Go-Round of Life (Howl's Moving Castle)
     - title: Joe Hisaishi, Arr. Yuto Yamada
       description: My Neighbor Totoro Medley
     - title: Chick Corea, Arr. Rob Buckland
