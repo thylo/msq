@@ -1,12 +1,16 @@
 .c-gallery {
   position: relative;
+  background: var(--color-sand1);
+  @include mq(medium) {
+    background: none;
+  }
   &__background {
-    background: var(--color-sand1);
-    position: absolute;
-    top: 0;
-    height: 100%;
-    z-index: 0;
     @include mq(medium) {
+      z-index: 0;
+      position: absolute;
+      height: 100%;
+      background: var(--color-sand1);
+      top: 0;
       left: 0;
       right: 0;
     }
@@ -22,6 +26,7 @@
   &__title {
     text-align: center;
     margin-bottom: 0;
+    padding: calc(40 / 16 * 1rem) 0 calc(30 / 16 * 1rem) 0;
     @include mq(medium) {
       padding: calc(80 / 16 * 1rem) 0 calc(60 / 16 * 1rem) 0;
     }

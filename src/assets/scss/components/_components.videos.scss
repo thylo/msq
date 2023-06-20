@@ -1,5 +1,6 @@
 .c-videos {
   padding-top: calc(64 / 16 * 1rem);
+  padding-bottom: calc(64 / 16 * 1rem);
   @include mq(medium) {
     padding: calc(96 / 16 * 1rem) 0;
     gap: var(--grid-gap);
@@ -17,21 +18,46 @@
       grid-column: 6 / 13;
     }
   }
+  &__title{
+    margin-bottom: calc(48 / 16 * 1rem);
+    @include mq(medium){
+
+    }
+  }
+  &__item{
+    margin-bottom: calc(24 / 16 * 1rem);
+  }
 }
 .c-video-btn {
+  color: var(--color-green2);
   cursor: pointer;
   appearance: none;
   border: none;
   background: none;
-  display: block;
+  display: flex;
+  gap: calc(16 / 16 * 1rem);
   text-align: left;
-  margin-bottom: calc(40 / 16 * 1rem);
   position: relative;
   padding: 0;
   width: 100%;
-  opacity: 60%;
+  @include mq(medium) {
+    display: block;
+    opacity: 60%;
+  }
   &:hover {
     opacity: 0.5;
+  }
+  &__content {
+    display: block;
+  }
+  &__icon {
+    svg {
+      width: calc(48 / 16 * 1rem);
+      height: calc(48 / 16 * 1rem);
+    }
+    @include mq(medium) {
+      display: none;
+    }
   }
   &__title {
     font-size: 24px;
@@ -46,15 +72,17 @@
   }
   &.active {
     opacity: 100%;
-    &:after {
-      position: absolute;
-      content: "";
-      height: 4px;
-      background: var(--color-sand2);
-      right: -60px;
-      z-index: 2;
-      top: .5rem;
-      width: 48px;
+    @include mq(medium) {
+      &:after {
+        position: absolute;
+        content: "";
+        height: 4px;
+        background: var(--color-sand2);
+        right: -60px;
+        z-index: 2;
+        top: 0.5rem;
+        width: 48px;
+      }
     }
   }
 }

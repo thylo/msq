@@ -14,7 +14,7 @@ permalink: /{{ locale }}/index.html
     <div class="c-header__content">
 
         <nav class="c-header__nav" aria-label="main navigation">
-            <div class="c-mainnav l-container">
+            <div class="c-mainnav">
                 <p class="c-mainnav__link">
                     <a href="/" class="c-header__logo">{% render "svg/logo.svg" %}</a>
                 </p>
@@ -70,14 +70,17 @@ permalink: /{{ locale }}/index.html
 
 <section class="c-videos l-container">
     <div class="c-videos__content">
-        <h2 class="h2">{{ t.videos }}</h2>
+        <h2 class="h2 c-videos__title">{{ t.videos }}</h2>
         <ul class="o-list-bare">
             {% for video in videos %}
-                <li>
-                    <button class="js-video-btn c-video-btn" data-video-id="{{ video.id }}">
-                        <span class="c-video-btn__title">{{ video.title | translate: locale }}</span>
-                        <span class="c-video-btn__body">{{ video.subtitle | translate: locale }}</span>
-                    </button>
+                <li class="c-videos__item">
+                    <a class="js-video-btn c-video-btn" data-video-id="{{ video.id }}" href="{{ video.link }}">
+                        <span class="c-video-btn__icon">{% render "svg/play_btn.svg" %}</span>
+                        <span class="c-video-btn__content">
+                            <span class="c-video-btn__title">{{ video.title | translate: locale }}</span>
+                            <span class="c-video-btn__body">{{ video.subtitle | translate: locale }}</span>
+                        </span>
+                    </a>
                 </li>
             {% endfor %}
         </ul>

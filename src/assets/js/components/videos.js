@@ -1,15 +1,20 @@
+import breakpoints from "../breakpoints";
+
 const onBtnClick = (evt) => {
-  document.querySelectorAll(".js-video-player").forEach((el, index) => {
-    const active = el.dataset.videoId === evt.currentTarget.dataset.videoId;
-    el.classList.toggle("u-hidden", !active);
-    if (!active){
-      el.querySelector('iframe')?.remove();
-    }
-  });
-  document.querySelectorAll(".js-video-btn").forEach((el, index) => {
-    const active = el.dataset.videoId === evt.currentTarget.dataset.videoId;
-    el.classList.toggle("active", active);
-  });
+  if (window.matchMedia(breakpoints.medium).matches) {
+    evt.preventDefault();
+    document.querySelectorAll(".js-video-player").forEach((el, index) => {
+      const active = el.dataset.videoId === evt.currentTarget.dataset.videoId;
+      el.classList.toggle("u-hidden", !active);
+      if (!active) {
+        el.querySelector('iframe')?.remove();
+      }
+    });
+    document.querySelectorAll(".js-video-btn").forEach((el, index) => {
+      const active = el.dataset.videoId === evt.currentTarget.dataset.videoId;
+      el.classList.toggle("active", active);
+    });
+  }
 };
 
 const videoSelector = () => {

@@ -1,11 +1,19 @@
 .c-repertoires {
-  padding: calc(60 / 16 * 1rem);
+  padding-top: calc(60 / 16 * 1rem);
+  padding-bottom: calc(60 / 16 * 1rem);
   @include mq(medium) {
+    padding: calc(60 / 16 * 1rem);
     display: grid;
     gap: var(--grid-gap);
     grid-template-columns: repeat(12, 1fr);
   }
 
+  &__wrapper{
+    margin-bottom: calc(32 / 16 * 1rem);;
+    @include mq(medium) {
+      margin-bottom: 0;
+    }
+  }
   &__wrapper,
   &__list {
     grid-column: 2 / 13;
@@ -34,7 +42,7 @@
   padding: 1rem 2rem;
   border-radius: 99rem;
   display: inline-flex;
-  gap:1rem;
+  gap: 1rem;
   &__select {
     font-size: calc(22 / 16 * 1rem);
     appearance: none;
@@ -44,14 +52,23 @@
 }
 
 .c-repertoire-work {
-  display: grid;
-  gap: var(--grid-gap);
-  grid-template-columns: repeat(11, 1fr);
+  margin-bottom: calc(32 / 16 * 1rem);
+  @include mq(medium) {
+    margin-bottom: 0;
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: repeat(11, 1fr);
+  }
   font-size: calc(18 / 16 * 1rem);
   &__title {
-    grid-column: 1 / 5;
+    margin-bottom: calc(16 / 16 * 1rem);
+    @include mq(medium) {
+      grid-column: 1 / 5;
+    }
   }
   &__body {
-    grid-column: 5 / 12;
+    @include mq(medium) {
+      grid-column: 5 / 12;
+    }
   }
 }
