@@ -113,7 +113,6 @@ async function init() {
   const files = await Promise.all(
     transforms.map((transform) => processTransform(transform, outputDir))
   );
-  console.log(JSON.stringify(files.flat(), null, 2));
   fs.writeFileSync(
     path.resolve("./assets-manifest.json"),
     JSON.stringify(files.flat(), null, 2),
