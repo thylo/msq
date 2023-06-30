@@ -15,7 +15,7 @@
     "images": "ts-node \"./build_tasks/transform-images.ts\"",
     "watch:scripts": "onchange \"./src/assets/js/**/*\" -- npm run scripts:dev",
     "watch:styles": "onchange \"./src/assets/scss/**/*\" -- npm run styles:dev",
-    "build": "npm run images && npm-run-all clean --parallel styles:prod scripts:prod eleventy",
+    "build": "npm run clean && npm run images && npm-run-all --parallel styles:prod scripts:prod eleventy",
     "dev": "npm-run-all --parallel server watch:*"
   },
   "keywords": [],
