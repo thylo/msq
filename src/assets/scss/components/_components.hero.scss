@@ -1,0 +1,103 @@
+.c-hero-content {
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
+  @media (min-width: 425px) {
+    height: 70vh;
+  }
+
+  @media (min-width: 1024px) {
+    height: 90vh;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 12rem;
+    background: linear-gradient(
+      to top,
+      var(--dark-jungle-green),
+      rgba(var(--dark-jungle-green-rgb), 0)
+    );
+    pointer-events: none;
+  }
+}
+
+.c-hero-content-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 80% 0%;
+}
+
+@media (min-width: 768px) {
+  .c-hero-content-image {
+    object-position: right top;
+  }
+}
+
+.c-hero-quote {
+  background: var(--dark-jungle-green);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  gap: 0.5rem;
+  margin: -1px 0 0 0;
+}
+
+@media (min-width: 768px) {
+  .c-hero-quote {
+    padding: 6rem 3rem;
+  }
+}
+
+.c-hero-quote blockquote {
+  text-align: center;
+  font-size: 2rem;
+  font-family: var(--serif-font-family);
+  margin: unset;
+}
+
+@media (min-width: 768px) {
+  .c-hero-quote blockquote {
+    font-size: 3.5rem;
+  }
+}
+
+.c-hero-quote blockquote::before,
+.c-hero-quote blockquote::after {
+  font-variant-position: super;
+  color: var(--peach-orange);
+}
+
+.c-hero-quote blockquote::before {
+  content: "“";
+}
+
+.c-hero-quote blockquote::after {
+  content: "”";
+}
+
+.c-hero-quote figcaption {
+  font-style: italic;
+  opacity: 0.5;
+  width: 100%;
+  text-align: center;
+  margin-left: -2rem;
+}
+
+@media (min-width: 768px) {
+  .c-hero-quote figcaption {
+    text-align: right;
+    margin-left: unset;
+  }
+}
+
+.c-hero-quote figcaption::before {
+  content: "—";
+  margin-right: 0.25rem;
+}

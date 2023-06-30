@@ -1,4 +1,4 @@
-const embedImg = ()=>{
+const embedImg = (fileName)=>{
 
 }
 

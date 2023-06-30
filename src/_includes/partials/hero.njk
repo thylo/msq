@@ -1,0 +1,15 @@
+<section class="c-hero">
+    {% include 'partials/mainnav.njk' %}
+    <div class="c-hero-content">
+        <img src="{{ "src/assets/img/backgrounds/hero_image.jpg" | imageBiggestPath }}"
+             class="c-hero-content-image"
+             srcset="{{ "src/assets/img/backgrounds/hero_image.jpg" | imageSrcset }}"
+             sizes="100vw" alt="MSQ"/>
+    </div>
+    <figure class="c-hero-quote">
+        <blockquote>
+            Music, the mosaic of the air
+        </blockquote>
+        <figcaption>Andrew Marvell</figcaption>
+    </figure>
+</section>

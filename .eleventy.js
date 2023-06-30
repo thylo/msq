@@ -1,9 +1,11 @@
 const yaml = require("js-yaml");
 const { EleventyI18nPlugin } = require("@11ty/eleventy");
 const { dateMed, dateIso, dateYear } = require("./src/_11ty/filters/dates");
+const sizeFilter = require("./src/_11ty/filters/sizes");
 const { translate } = require("./src/_11ty/filters/translate");
 const imageShortCode = require("./src/_11ty/shortcodes/imageShortCode");
 const repertoires = require("./src/_11ty/collections/repertoires");
+const {imageSrcset, imagePath, imageBiggestPath} = require("./src/_11ty/filters/sizes");
 
 module.exports = (eleventyConfig) => {
   //Plugins
@@ -17,9 +19,6 @@ module.exports = (eleventyConfig) => {
   );
 
   // collections
-  //eleventyConfig.addCollection("blogposts", blogposts);
-  //eleventyConfig.addCollection("projects", projects);
-  //eleventyConfig.addCollection("concerts", concerts);
   eleventyConfig.addCollection("repertoires", repertoires);
 
   // filters
@@ -27,13 +26,13 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addFilter("dateYear", dateYear);
   eleventyConfig.addFilter("dateMed", dateMed);
   eleventyConfig.addFilter("translate", translate);
+  //images
+  eleventyConfig.addFilter("imageSrcset", imageSrcset("./assets-manifest.json","/assets/img"));
+  eleventyConfig.addFilter("imagePath", imagePath("./assets-manifest.json","/assets/img"));
+  eleventyConfig.addFilter("imageBiggestPath", imageBiggestPath("./assets-manifest.json","/assets/img"));
 
   //shortcode
-  eleventyConfig.addShortcode("image", imageShortCode([600, 900, 1500]));
-  eleventyConfig.addShortcode(
-    "bgImage",
-    imageShortCode([320, 640, 1024, 1920])
-  );
+
   // ignores
   eleventyConfig.ignores.add("src/assets/**/*");
   eleventyConfig.watchIgnores.add("src/assets/**/*");
@@ -42,7 +41,6 @@ module.exports = (eleventyConfig) => {
   // passthrough copy
   eleventyConfig.setServerPassthroughCopyBehavior("copy");
   eleventyConfig.addPassthroughCopy({ "./src/static": "/" });
-  eleventyConfig.addPassthroughCopy("./src/assets/img");
   eleventyConfig.addPassthroughCopy("./src/assets/fonts");
   eleventyConfig.addPassthroughCopy("./src/assets/svg");
 

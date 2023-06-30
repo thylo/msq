@@ -27,7 +27,7 @@
 
   {% block content %}{% endblock %}
 
-  {% render "partials/sitefooter.liquid" %}
+  {% include "partials/sitefooter.njk" %}
   <script src="/assets/js/main.bundle.js?ref={{ site.buildTime | dateISO }}"></script>
 </body>
 </html>

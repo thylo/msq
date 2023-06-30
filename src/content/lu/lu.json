@@ -1,6 +1,6 @@
 {
   "locale": "lu",
-  "layout": "index.liquid",
+  "layout": "index.njk",
   "t": {
     "members": "The saxophonists",
     "videos": "Videos",

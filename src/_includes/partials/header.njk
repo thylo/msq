@@ -1,0 +1,14 @@
+<header class="c-header">
+    "src/assets/img/hero_image.jpg", "MSQ", "100vw", "c-header__background"
+    <div class="c-header__content">
+
+        {% include 'partials/mainnav.njk' %}
+
+        <figure class="c-header__quote c-header-quote">
+            <blockquote class="c-header-quote__quote">
+                <q>{{ hero.quote }}</q>
+            </blockquote>
+            <cite class="c-header-quote__author">{{ hero.author }}</cite>
+        </figure>
+    </div>
+</header>

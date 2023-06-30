@@ -1,0 +1,41 @@
+{% macro picture(folder, image) %}
+
+    {% set img600 = '/assets/img/'+folder+'/600x600/' ~ image %}
+    {% set img600webp = '/assets/img/'+folder+'/600x600/' ~ image|setExt("webp") %}
+    {% set img1024 = '/assets/img/'+folder+'/1024x576/' ~ image %}
+    {% set img1024webp = '/assets/img/'+folder+'/1024x576/' ~ image|setExt("webp") %}
+    {% set img1500 = '/assets/img/'+folder+'/' ~ image %}
+    {% set img1500webp = '/assets/img/'+folder+'/' ~ image|setExt("webp") %}
+
+    <picture>
+        <!-- webp > 600px -->
+        <source type="image/webp"
+                media="(min-width: 500px)"
+                srcset="{{ img1024webp }} 1024w,
+                  {{ img1500webp }} 1500w"
+                sizes="100vw"
+                width="1500"
+                height="844">
+        <!-- jpg > 600px -->
+        <source media="(min-width: 500px)"
+                srcset="{{ img1024webp }} 1024w,
+                  {{ img1500webp }} 1500w"
+                sizes="100vw"
+                width="1500"
+                height="844">
+        <!-- webp default square -->
+        <source type="image/webp"
+                srcset="{{ img600webp }}"
+                sizes="100vw"
+                width="600"
+                height="600">
+        <!-- jpg default square -->
+        <img src="{{ img600 }}"
+             width="600"
+             height="600"
+             class="o-fluidimage"
+             alt="{{ imageAlt }}"
+             loading="lazy"
+             decoding="async">
+    </picture>
+{% endmacro %}

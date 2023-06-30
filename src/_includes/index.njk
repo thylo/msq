@@ -1,0 +1,188 @@
+---
+permalink: /{{ locale }}/index.html
+---
+{% from "macros/images.njk" import picture %}
+
+{% extends "layouts/base.njk" %}
+
+{% set metaTitle = site[locale].metaTitle %}
+{% set metaDescription = site[locale].metaDescription %}
+{% set metaImage = site[locale].metaImage %}
+
+{% block content %}
+    {% include "partials/hero.njk" %}
+
+    <section class="c-about">
+        <div class="c-about__content l-container">
+            <div class="c-about__intro">
+                <h1 class="h2 c-about__title">{{ title }}</h1>
+                {{ content | safe }}
+            </div>
+            <h2 class="c-about__members-title">{{ t.members }}</h2>
+            <section class="c-about__members c-members">
+                <ul class="c-members-list c-members__list">
+                    {% for member in members %}
+                        <li class="c-members-list__item">
+                            <h4 class="c-members-list__name">{{ member.name }}</h4>
+                            <span>{{ member.instrument }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <div class="c-about__image">
+                <img src="{{ "src/assets/img/statics/intro_image.jpg" | imageBiggestPath }}" alt="MSQ"
+                     srcset="{{ "src/assets/img/statics/intro_image.jpg" | imageSrcset }}"
+                     sizes="(min-width: 30em) 50vw, 100vw"/>
+            </div>
+        </div>
+    </section>
+
+    <section class="c-videos l-container">
+        <div class="c-videos__content">
+            <h2 class="h2 c-videos__title">{{ t.videos }}</h2>
+            <ul class="o-list-bare">
+                {% for video in videos %}
+                    <li class="c-videos__item">
+                        <a class="js-video-btn c-video-btn" data-video-id="{{ video.id }}" href="{{ video.link }}">
+                            <span class="c-video-btn__icon">{% include "svg/play_btn.svg" %}</span>
+                            <span class="c-video-btn__content">
+                            <span class="c-video-btn__title">{{ video.title | translate(locale) }}</span>
+                            <span class="c-video-btn__body">{{ video.subtitle | translate(locale) }}</span>
+                        </span>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="c-videos__video">
+            {% for video in videos %}
+                {% include "partials/video.njk" %}
+            {% endfor %}
+        </div>
+    </section>
+    <section class="c-gallery">
+        <div class="c-gallery__background l-container"></div>
+        <h2 class="c-gallery__title h2 l-container">{{ t.gallery }}</h2>
+        <div class="js-swiper c-gallery__list c-gallery-list">
+            <ul class="o-list-bare swiper-wrapper c-gallery-list__list">
+                {%- for photo in gallery -%}
+                    <li class="c-gallery-list__item swiper-slide">
+                        <img src="{{ photo.url | imageBiggestPath }}"
+                             class="c-gallery-list__picture"
+                             srcset="{{ photo.url | imageSrcset }}"
+                             sizes="(min-width: 30em) 50vw, 100vw" alt="{{ photo.alt }}"/>
+                    </li>
+                {%- endfor -%}
+            </ul>
+        </div>
+
+        <div class="c-gallery-pagination c-gallery__pagination l-container">
+            <button class="js-swiper-button-prev c-gallery-pagination__btn">
+                <img src="/assets/svg/right_arrow.svg" alt="prev slide"/>
+            </button>
+            <button class="js-swiper-button-next c-gallery-pagination__btn">
+                <img src="/assets/svg/right_arrow.svg" alt="next slide"/>
+            </button>
+        </div>
+    </section>
+
+
+    <section class="c-repertoires l-container">
+        <div class="c-repertoires__wrapper">
+            <h2 class="h2 c-repertoires__title">{{ t.repertoires }}</h2>
+            <div class="c-repertoires__select c-repertoire-select" id="">
+                <select name="" id="" class="c-repertoire-select__select js-repertoire-select u-hidden"></select>
+                {% include "svg/select_arrow.svg" %}
+            </div>
+        </div>
+        <ul class="o-list-bare c-repertoires__list">
+            {% for item in collections.repertoires %}
+                {% if item.data.locale == locale %}
+                    {% set repertoire = item.data %}
+                    {% include 'partials/repertoire.njk' %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="c-intersection">
+        <img src="{{ "src/assets/img/backgrounds/intersection_image.jpg" | imageBiggestPath }}"
+             class="c-gallery-list__picture"
+             srcset="{{ "src/assets/img/backgrounds/intersection_image.jpg" | imageSrcset }}"
+             sizes="100vw" alt="MSQ walking in park"/>
+    </section>
+
+    <section class="c-agenda__background">
+        <div class="l-container">
+            <div class="c-agenda">
+                <h2 class="h2 c-agenda__title">{{ t.see_us_live }}</h2>
+                <div class="c-agenda__content">
+                    {% if future_concerts.size > 0 %}
+                        <div class="c-agenda__subtitle-wrapper">
+                            <h3 class="c-agenda__subtitle">{{ t.future_events }}</h3>
+                        </div>
+                        <ul class="o-list-bare c-agenda__past">
+                            {% for concert in future_concerts %}
+                                {% include 'partials/concert.njk' %}
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                    <div class="c-agenda__subtitle-wrapper">
+                        <h3 class="c-agenda__subtitle">{{ t.past_events }}</h3>
+                    </div>
+                    <ul class="o-list-bare">
+                        {% for concert in past_concerts %}
+                            {% include 'partials/concert.njk' %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="l-container">
+        <div class="c-contact">
+            <h2 class="h2">{{ t.get_in_touch }}</h2>
+            <ul class="c-contact__links o-list-bare">
+                <li class="c-contact__link"><a href="mailto:{{ site.contact.mail }}">{{ site.contact.mail }}</a></li>
+                {% for contact in site.contact.contacts %}
+                    <li class="c-contact__link">
+                        <a href="tel:{{ contact.phone }}">
+                            {{ contact.phone }}
+                        </a>
+                        <span>{{ contact.name }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+    <footer class="l-container">
+        <div class="c-footer">
+            <div class="c-footer__copyrights c-copyrights">
+                <h5 class="c-copyrights__title">Copyrights</h5>
+                <ul class="o-list-bare">
+                    {% for copyright in copyrights %}
+                        <li class="u-margin-bottom-base">
+                            <h6 class="u-margin-all-none c-copyrights__subtitle">{{ copyright.name }}</h6>
+                            <ul class="o-list-bare">
+                                {% for link in copyright.links %}
+                                    <li>&copy; <a href="{{ link.link }}">{{ link.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="c-footer__img">
+                <img src="{{ "src/assets/img/statics/footer_image.jpg" | imageBiggestPath }}"
+                     class="c-gallery-list__picture"
+                     srcset="{{ "src/assets/img/statics/footer_image.jpg" | imageSrcset }}"
+                     sizes="(min-width: 30em) 50vw, 100vw" alt="MSQ on bench"/>
+            </div>
+            <div class="c-footer__social">
+                <a href="facebook.com">{% include "svg/facebook_logo.svg" %}</a>
+            </div>
+        </div>
+    </footer>
+{% endblock %}

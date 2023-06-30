@@ -1,6 +1,9 @@
 <div class="c-videoplayer  js-video-player" data-video-service="youtube" data-video-id="{{ video.id }}">
     <a class="c-videoplayer__link  js-video-link" href="{{ video.link }}" aria-label="play video: video title">
-        {% image video.url, video.link, "(min-width: 30em) 625px, 100vw", 'c-videoplayer__cover' %}
+        <img src="{{ video.url | imageBiggestPath }}"
+             class="c-videoplayer__cover"
+             srcset="{{ video.url | imageSrcset }}"
+             sizes="(min-width: 30em) 625px, 100vw" alt={{ video.link }}/>
     </a>
     <template class="js-video-template">
         <iframe src="" allow="autoplay; fullscreen" allowfullscreen></iframe>

@@ -7,3 +7,5 @@ node_modules
 # public site
 dist
 .idea
+
+/assets-manifest.json

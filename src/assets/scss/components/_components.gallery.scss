@@ -45,7 +45,7 @@
     @include mq(medium) {
       height: calc(512 / 16 * 1rem);
     }
-    width: max-content;
+    width: auto;
   }
 
   &__picture {
