@@ -46,8 +46,8 @@
 
 .c-mainnav-link {
   text-decoration: none;
-
+  color: var(--color-brand);
   &.is-active {
-    color: var(--color-brand);
+    color: white;
   }
 }
