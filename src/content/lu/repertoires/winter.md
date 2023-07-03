@@ -1,5 +1,6 @@
 ---
 name: Wanterprogramm
+published: true
 works:
     - title: Pyotr Ilyich Tchaikovsky, Arr. Yuto Yamada
       description: Suite tirée du Ballet « Casse-Noisette », Op. 71a

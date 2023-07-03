@@ -97,7 +97,7 @@ permalink: /{{ locale }}/index.html
         </div>
         <ul class="o-list-bare c-repertoires__list">
             {% for item in collections.repertoires %}
-                {% if item.data.locale == locale %}
+                {% if item.data.locale == locale and item.data.published %}
                     {% set repertoire = item.data %}
                     {% include 'partials/repertoire.njk' %}
                 {% endif %}

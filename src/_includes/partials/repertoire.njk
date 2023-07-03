@@ -1,6 +1,6 @@
 <li class="c-repertoire js-repertoire" data-name="{{ repertoire.name }}">
     <h3 class="c-repertoire__title js-repertoire-name">{{ repertoire.name }}</h3>
-    <div class="c-repertoires__body">{{ repertoire.content }}</div>
+    <div class="c-repertoires__body">{{ repertoire.content | safe }}</div>
     <ul class="o-list-bare">
         {% for work in repertoire.works %}
             <li class="c-repertoire-work">

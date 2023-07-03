@@ -1,5 +1,6 @@
 ---
 name: Spring repertoire
+published: false
 works:
     - title: Spring Joe Hisaishi, arr. Yuto Yamada
       description: Suite tirée du Ballet « Casse-Noisette », Op. 71a
