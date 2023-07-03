@@ -1,15 +1,22 @@
+.c-hero{
+  position: relative;
+}
 .c-hero-content {
   position: relative;
   height: 50vh;
   overflow: hidden;
-  @media (min-width: 425px) {
+  display: flex;
+  align-items: center;
+
+  @include mq(small) {
     height: 70vh;
   }
 
-  @media (min-width: 1024px) {
+  @include mq(medium) {
     height: 90vh;
   }
-  &:before {
+
+  &:after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -22,6 +29,10 @@
       rgba(var(--dark-jungle-green-rgb), 0)
     );
     pointer-events: none;
+  }
+
+  &__nav{
+
   }
 }
 
