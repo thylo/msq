@@ -1,23 +1,21 @@
-<nav class="c-header__nav" aria-label="main navigation">
-    <div class="c-mainnav">
-        <p class="c-mainnav__link">
-            <a href="/" class="c-header__logo">{% include "svg/logo.svg" %}</a>
-        </p>
-        <ul class="o-list-bare c-mainnav__items c-mainnav-items">
-            {% for item in site.links %}
-                {% set activeClass = "" %}
-                {% set activeAria = "" %}
-                {% if item.locale == locale %}
-                    {% set activeClass = "is-active" %}
-                    {% set activeAria = 'aria-current="page"' %}
-                {% endif %}
-                <li>
-                    <a class="c-mainnav-items__link c-mainnav-link {{ activeClass }}"
-                       href="/{{ item.locale }}" {{ activeAria }}>
-                        {{ item.label }}
-                    </a>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
+<nav class="c-mainnav c-hero-content__nav" aria-label="main navigation">
+    <p class="c-mainnav__link">
+        <a href="/" class="c-header__logo">{% include "svg/logo.svg" %}</a>
+    </p>
+    <ul class="o-list-bare c-mainnav__items c-mainnav-items">
+        {% for item in site.links %}
+            {% set activeClass = "" %}
+            {% set activeAria = "" %}
+            {% if item.locale == locale %}
+                {% set activeClass = "is-active" %}
+                {% set activeAria = 'aria-current="page"' %}
+            {% endif %}
+            <li>
+                <a class="c-mainnav-items__link c-mainnav-link {{ activeClass }}"
+                   href="/{{ item.locale }}" {{ activeAria }}>
+                    {{ item.label }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
 </nav>

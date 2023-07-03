@@ -1,15 +1,18 @@
 .c-mainnav {
   position: absolute;
   z-index: 2;
+  top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
   padding: calc(24 / 16 * 1rem);
   gap: 2rem;
-  @include mq(medium) {
+  @include mq(large) {
+    justify-content: space-between;
     flex-direction: row;
     align-items: flex-start;
   }
@@ -43,8 +46,8 @@
 
 .c-mainnav-link {
   text-decoration: none;
-
+  color: var(--color-brand);
   &.is-active {
-    color: var(--color-brand);
+    color: white;
   }
 }
