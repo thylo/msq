@@ -1,10 +1,13 @@
-## Todos 
+# Mosoic Saxophone Quartet
 
-- [x] Envoyer mail Gaetan
-- [x] Donner acces à Thibault
-- [ ] Recadrer image de hero pour mobile
-- [ ] Descendre logo dans fond vert mobile
-- [ ] Diminuer padding vertical bas fond vert hero 
-- [ ] Prendre 100% hauteur pour le hero
-- [ ] videos : mobile, afficher bouton play et texte bleu
-- [ ] repertoire: mobile, passer l'un en dessous de l'autre
+Website of the european [Mosaic Saxophone Quartet](https://mosaic-saxophone-quartet.netlify.app/lu/).
+
+Design by [Deveux Gaetan](https://github.com/devauxgaetan)
+
+This website is made with [11ty](https://www.11ty.dev/).
+
+## Copyright
+
+The code is made available for educational purpose but remains the property of [Julien Moreau](https://thylo.be). Please do not copy or reuse the design, code and/or content. Thank you.
+
+All texts and images remains the property of the [Mosaic Saxophone Quartet](https://mosaic-saxophone-quartet.netlify.app/lu/).
