@@ -1,4 +1,4 @@
-# Mosoic Saxophone Quartet
+# Mosaic Saxophone Quartet
 
 Website of the european [Mosaic Saxophone Quartet](https://mosaic-saxophone-quartet.netlify.app/lu/).
 
