@@ -55,7 +55,7 @@
     margin-bottom: 30px;
     @include mq(large) {
       margin: 0;
-      transform: rotate(90deg) translate(-50%);
+      transform: rotate(-90deg) translate(50%);
       position: absolute;
       top: 50%;
       left: -50%;

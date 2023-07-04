@@ -38,12 +38,14 @@
 }
 
 .c-repertoire-select {
+  color: var(--color-gray3);
   background: var(--color-gray1);
   padding: 1rem 2rem;
   border-radius: 99rem;
   display: inline-flex;
   gap: 1rem;
   &__select {
+    color: var(--color-gray3);
     font-size: calc(22 / 16 * 1rem);
     appearance: none;
     border: none;

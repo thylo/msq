@@ -2,7 +2,7 @@
     {% if concert.nice_date %}
         <p class="c-concert__date">{{ concert.nice_date }}</p>
     {% else %}
-        <p class="c-concert__date">{{ concert.date | dateMed: 'fr' }}</p>
+        <p class="c-concert__date">{{ concert.date | dateMed(locale) }}</p>
     {% endif %}
     <h5 class="c-concert__title">
         <span>{{ concert.name }}</span>

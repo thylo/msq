@@ -117,11 +117,11 @@ permalink: /{{ locale }}/index.html
             <div class="c-agenda">
                 <h2 class="h2 c-agenda__title">{{ t.see_us_live }}</h2>
                 <div class="c-agenda__content">
-                    {% if future_concerts.size > 0 %}
+                    {% if future_concerts|length %}
                         <div class="c-agenda__subtitle-wrapper">
                             <h3 class="c-agenda__subtitle">{{ t.future_events }}</h3>
                         </div>
-                        <ul class="o-list-bare c-agenda__past">
+                        <ul class="o-list-bare">
                             {% for concert in future_concerts %}
                                 {% include 'partials/concert.njk' %}
                             {% endfor %}
@@ -130,7 +130,7 @@ permalink: /{{ locale }}/index.html
                     <div class="c-agenda__subtitle-wrapper">
                         <h3 class="c-agenda__subtitle">{{ t.past_events }}</h3>
                     </div>
-                    <ul class="o-list-bare">
+                    <ul class="o-list-bare c-agenda__past">
                         {% for concert in past_concerts %}
                             {% include 'partials/concert.njk' %}
                         {% endfor %}
