@@ -50,6 +50,7 @@ const transforms: Transform[] = [
   {
     glob: "./src/content/gallery/*",
     sizes: [
+      { width: 1920, height: Math.floor((1920 * 9) / 16), fit: "inside" },
       { width: 1280, height: Math.floor((1280 * 9) / 16), fit: "inside" },
       { width: 1024, height: Math.floor((1024 * 9) / 16), fit: "inside" },
       { width: 800, height: Math.floor((800 * 9) / 16), fit: "inside" },
