@@ -67,10 +67,12 @@ permalink: /{{ locale }}/index.html
             <ul class="o-list-bare swiper-wrapper c-gallery-list__list">
                 {%- for photo in gallery -%}
                     <li class="c-gallery-list__item swiper-slide">
+                        <a href="{{ photo.url | imageBiggestPath }}" data-fslightbox class="c-gallery-list__picture">
                         <img src="{{ photo.url | imageBiggestPath }}"
                              class="c-gallery-list__picture"
                              srcset="{{ photo.url | imageSrcset }}"
                              sizes="(min-width: 30em) 50vw, 100vw" alt="{{ photo.alt }}"/>
+                        </a>
                     </li>
                 {%- endfor -%}
             </ul>
