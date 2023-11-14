@@ -3,7 +3,7 @@
   "layout": "index.njk",
   "t": {
     "members": "Les saxophonistes",
-    "videos": "Vidéos",
+    "videos": "Vidéo",
     "gallery": "Galerie",
     "repertoires": "Nos repertoires",
     "see_us_live" : "Agenda",
