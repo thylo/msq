@@ -2,10 +2,10 @@
   "locale": "lu",
   "layout": "index.njk",
   "t": {
-    "members": "The saxophonists",
-    "videos": "Videos",
+    "members": "D'Saxophonisten",
+    "videos": "Video",
     "gallery": "Gallery",
-    "repertoires": "Our repertoires",
+    "repertoires": "Eis Repertoire",
     "see_us_live" : "See us live",
     "future_events" : "Future events",
     "past_events" : "Past events",
