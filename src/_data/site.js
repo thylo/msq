@@ -1,5 +1,5 @@
 module.exports = {
-  url: "https://www.msq.be",
+  url: "https://www.mosaicsaxquartet.be",
   baseUrl: "/",
   author: "Julien Moreau",
   email: "julien@thylo.be",
@@ -10,7 +10,7 @@ module.exports = {
     metaDescription: "Mosaïc Saxophone Quartet.",
   },
   contact: {
-    mail: "info@msq.com",
+    mail: "info@mosaicsaxquartet.com",
     contacts: [
       { phone: "+352 621 211 352", name: "Melina" },
       { phone: "+32 472 69 47 86", name: "Thibault" },
